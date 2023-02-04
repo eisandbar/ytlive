@@ -1,0 +1,116 @@
+
+/* Cards general */
+
+.overlay-title {
+    font-size: 1.55rem;
+    color: rgb(231, 215, 235);
+    text-shadow: 0 0 0.5vw rgb(211, 164, 208);
+    
+    text-align: center;
+    width: 100%;
+    height: 70%;
+}
+.overlay-parent {
+    position: relative;
+
+}
+
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0!important;
+}
+
+h6.ellipses {
+    height: 0.7rem;
+    white-space: nowrap; 
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+.card {
+    cursor: pointer;
+}
+
+/* Streams */
+.overlay-text {
+    padding: 0.2rem!important;
+    width: fit-content;
+    background-color: rgba(0,0,0,0.65)!important;
+    border-top: unset!important;
+}
+
+.stream-img {
+    aspect-ratio: 16 / 9;
+}
+
+.stream {
+    min-width: 16rem;
+    max-width: 16rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Categories */
+.category {
+    min-width: 10rem;
+    max-width: 10rem;
+    margin-bottom: 0.5rem;
+}
+
+.category-img {
+    aspect-ratio: 72 / 100;
+}
+
+/* Rows */
+
+
+.section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+
+.header-link {
+    padding-left: 1rem;
+    font-size: 20px;
+    color: rgb(102, 27, 97);
+    cursor: pointer;
+}
+
+/* General */
+
+/* text background */
+.tb {
+    background-color: rgb(246, 223, 255);
+}
+
+.ovh {
+    overflow: hidden;
+}
+
+.background {
+    background-color: rgb(218, 197, 240);
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.content {
+    width: 80%;
+}
+
+.full-height {
+    height: 100%;
+    min-height: 100vh ;
+}
+
+/* Dividers */
+.solid {
+    margin-top: 1.5rem;
+    padding-bottom: 2rem;
+    border-top: 2px solid rgb(102, 27, 97);
+}

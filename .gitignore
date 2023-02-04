@@ -1,4 +1,5 @@
 *.txt
 /build
-/client/build
+/client/dist
+/client/node_modules
 ytlive
