@@ -3,6 +3,7 @@ package store
 import (
 	"fmt"
 	"log"
+	"os"
 
 	_ "github.com/lib/pq"
 	"gorm.io/driver/postgres"
@@ -11,10 +12,10 @@ import (
 )
 
 var (
-	HOST        = "localhost" // os.Getenv("POSTGRES_HOST")
-	USER        = "pguser"    // os.Getenv("POSTGRES_USER")
-	DB_NAME     = "pgdb"      // os.Getenv("POSTGRES_DB")
-	DB_PASSWORD = "secret"    // os.Getenv("POSTGRES_PASSWORD")
+	HOST        = os.Getenv("POSTGRES_HOST")
+	USER        = os.Getenv("POSTGRES_USER")
+	DB_NAME     = os.Getenv("POSTGRES_DB")
+	DB_PASSWORD = os.Getenv("POSTGRES_PASSWORD")
 )
 
 var dsn = fmt.Sprintf("host=%s port=5432 user=%s dbname=%s password=%s sslmode=disable",

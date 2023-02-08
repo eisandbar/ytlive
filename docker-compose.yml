@@ -4,8 +4,8 @@ services:
   db:
     image: postgres
     container_name: pgdb
-    ports: 
-      - "5432:5432"
+    networks:
+      - db-network
     volumes:
       - ./postgres/data/:/var/lib/postgresql/data
     environment:
@@ -37,11 +37,19 @@ services:
   app:
     restart: on-failure
     build: ./app
+    networks:
+      - db-network
     ports: 
       - "3322:3322"
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: pgdb
+      POSTGRES_HOST: db
 
 
 networks:
+  db-network:
   nginx-network:
     name: nginx-network
     external: true
