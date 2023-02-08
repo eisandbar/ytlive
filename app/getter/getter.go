@@ -87,16 +87,16 @@ func genURL(stream store.Stream) string {
 func getRequest(url string) []byte {
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		log.Fatalf("Failed to make request, %s", err)
+		log.Printf("Failed to make request, %s", err)
 	}
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		log.Fatalf("Bad response, %s", err)
+		log.Printf("Bad response, %s", err)
 	}
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatalf("Failed to read response body, %s", err)
+		log.Printf("Failed to read response body, %s", err)
 	}
 	return body
 }
