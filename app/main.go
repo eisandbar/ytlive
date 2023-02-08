@@ -12,11 +12,11 @@ import (
 )
 
 const (
-	CONN_PORT = "3000"
+	CONN_PORT = "3322"
 )
 
 func main() {
-	// // Get new list of streams
+	// Get new list of streams
 	service := youtubeapi.NewService()
 
 	pgStore := store.NewPGStore()
