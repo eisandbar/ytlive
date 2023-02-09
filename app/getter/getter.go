@@ -39,7 +39,11 @@ type Getter struct {
 
 // Searches db for streams without a category
 func (getter *Getter) SearchDB(streamChan chan<- store.Stream) {
-	streams := getter.Store.List(store.WithMaxResults(100))
+	streams := getter.Store.List(store.WithMaxResults(100), store.WithLive(true), store.WithFilters([]string{""}))
+	if len(streams) == 0 {
+		streams = getter.Store.List(store.WithMaxResults(100), store.WithLive(true), store.WithFilters([]string{"Pending"}))
+	}
+
 	log.Printf("Found %v streams without a category", len(streams))
 	for _, stream := range streams {
 
@@ -49,6 +53,7 @@ func (getter *Getter) SearchDB(streamChan chan<- store.Stream) {
 		if stream.Category == "" {
 			stream.Category = store.Pending // Change status so next SearchDB doesn't add again
 			streamChan <- stream            // Send to queue
+			log.Printf("Added stream %v to getter queue", stream.Id)
 		}
 
 		getter.Store.Update(stream) // Updates with non-gaming category or pending
@@ -62,6 +67,7 @@ func (getter *Getter) GetCategory(stream store.Stream) {
 	getter.Store.SaveCategory(category)
 	stream.Category = category.Category
 	getter.Store.Update(stream)
+	log.Printf("Found category %v for streams %v", category.Category, stream.Id)
 }
 
 func getCategory(url string) store.Category {
