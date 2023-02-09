@@ -35,7 +35,9 @@ export const CategoryCard = ({ item }: CardProps): ReactElement => {
           <Card.Title as="h6" className="ellipses">
             {item.category}
           </Card.Title>
-          <Card.Text>{item.concurrentViewers} viewers</Card.Text>
+          <Card.Text className="ellipses">
+            {item.concurrentViewers} viewers
+          </Card.Text>
         </Card.Body>
       </Card>
     </Col>
