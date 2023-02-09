@@ -34,12 +34,12 @@ services:
       - ./build/:/client/dist/
 
   app:
+    container_name: ytlive-server
     restart: on-failure
     build: ./app
     networks:
       - db-network
-    ports: 
-      - "3322:3322"
+      - nginx-network
     environment:
       POSTGRES_USER: pguser
       POSTGRES_PASSWORD: secret
