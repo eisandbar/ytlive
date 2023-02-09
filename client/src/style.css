@@ -47,14 +47,14 @@ h6.ellipses {
 
 .stream {
     min-width: 16rem;
-    max-width: 16rem;
+    max-width: 20rem;
     margin-bottom: 0.5rem;
 }
 
 /* Categories */
 .category {
     min-width: 10rem;
-    max-width: 10rem;
+    max-width: 14rem;
     margin-bottom: 0.5rem;
 }
 
@@ -78,6 +78,9 @@ h6.ellipses {
     cursor: pointer;
 }
 
+.header-title {
+    color: rgb(75, 9, 70)!important;
+}
 /* General */
 
 /* text background */
@@ -96,6 +99,8 @@ h6.ellipses {
 .page {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     height: 100%;
 }
 
@@ -108,9 +113,43 @@ h6.ellipses {
     min-height: 100vh ;
 }
 
+
+/* Nav */
+.navbar {
+    width: 100%;
+    background-color: rgb(246, 223, 255);
+}
+
+.navbar-brand {
+    display: flex;
+    justify-content: center;
+    padding-left: 1rem;
+    min-width: 10%;  
+    font-family: Copperplate;
+    -webkit-text-stroke: 1px;
+}
+
+.YT {
+    color: rgb(136, 17, 128)!important;
+    font-size: 35px;
+}
+
+.Live {
+    color: rgb(190, 62, 182)!important;
+    font-size: 35px;
+}
+
+.nav-link {
+    font-size: 20px!important;
+}
 /* Dividers */
 .solid {
     margin-top: 1.5rem;
     padding-bottom: 2rem;
     border-top: 2px solid rgb(102, 27, 97);
+}
+
+a.no-style {
+    text-decoration: none;
+    color: black;
 }
