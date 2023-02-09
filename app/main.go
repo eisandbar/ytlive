@@ -24,7 +24,7 @@ func main() {
 	checker.NewChecker(&pgStore, service, time.Minute*30)
 
 	// adder.NewAdder(&pgStore, service, true, time.Minute*30, 8*time.Hour)
-	adder.NewAdder(&pgStore, service, false, time.Minute*30, 8*time.Hour)
+	adder.NewAdder(&pgStore, service, false, time.Minute*30, 0)
 
 	getter.NewGetter(&pgStore)
 
