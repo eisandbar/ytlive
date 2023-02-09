@@ -30,7 +30,6 @@ services:
     build: 
       context: ./client/
       dockerfile: Dockerfile
-    restart: on-failure
     volumes:
       - ./build/:/client/dist/
 
