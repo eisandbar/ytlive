@@ -26,7 +26,7 @@ export const CategoryRow = ({ gaming, rows }: RowProps): ReactElement => {
   const getCategories = async (): Promise<void> => {
     try {
       const response = await fetch(
-        `http://${host}/categories?gaming=${gaming.toString()}`
+        `${host}/categories?gaming=${gaming.toString()}`
       );
       if (response.ok) {
         response.json().then(

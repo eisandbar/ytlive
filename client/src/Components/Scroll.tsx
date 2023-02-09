@@ -88,7 +88,7 @@ const genUrl = (
   maxResults: number,
   offset: number
 ): string => {
-  let url: string = `http://${host}/streams?maxResults=${maxResults}&offset=${offset}`;
+  let url: string = `${host}/streams?maxResults=${maxResults}&offset=${offset}`;
 
   if (props.gaming === true) {
     url += "&gaming=true";

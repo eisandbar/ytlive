@@ -24,7 +24,7 @@ export const StreamRow = (props: RowProps): ReactElement => {
   const getStreams = async (): Promise<void> => {
     try {
       const response = await fetch(
-        `http://${host}/streams?maxResults=${maxResults}&gaming=${props.gaming.toString()}`
+        `${host}/streams?maxResults=${maxResults}&gaming=${props.gaming.toString()}`
       );
       if (response.ok) {
         response.json().then(
