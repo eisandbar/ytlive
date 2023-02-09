@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
-import { Card, Col } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
 import { useNavigate } from "react-router-dom";
 import { Category } from "../util/category";
 import { isEmpty } from "../util/string";

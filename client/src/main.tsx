@@ -5,7 +5,6 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
 import "./style.css";
-import "./style.scss";
 import { CategoryPage } from "./Pages/Category";
 import { Streams } from "./Pages/Streams";
 import { Categories } from "./Pages/Categories";

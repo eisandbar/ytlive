@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from "react";
-import { Card, Col } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
 import { Stream } from "../util/stream";
 
 const defaultSrc: string = "/purpleWide2.jpg";
@@ -46,7 +47,7 @@ export const StreamCard = ({ item }: CardProps): ReactElement => {
             <Card.Title as="h6" className="ellipses">
               {item.title}
             </Card.Title>
-            <Card.Text>{item.channelTitle}</Card.Text>
+            <Card.Text className="ellipses">{item.channelTitle}</Card.Text>
           </Card.Body>
         </Card>
       </a>
