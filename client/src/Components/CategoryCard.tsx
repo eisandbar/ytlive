@@ -22,7 +22,7 @@ export const CategoryCard = ({ item }: CardProps): ReactElement => {
         <div className="overlay-parent ">
           <Card.Img
             src={!isEmpty(item.url) ? item.url : defaultSrc}
-            className="category-img"
+            className="category-img rounded-0"
           ></Card.Img>
 
           <Card.ImgOverlay>

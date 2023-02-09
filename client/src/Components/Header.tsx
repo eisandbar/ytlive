@@ -15,7 +15,7 @@ export const Header = ({ title, url, gaming }: HeaderProps): ReactElement => {
 
   return (
     <h1>
-      <span className="display-6 fw-bold text-left">{title}</span>
+      <span className="header-title fw-bold text-left">{title}</span>
       <span className="header-link" onClick={onClick}>
         See More
       </span>
