@@ -14,6 +14,7 @@ interface ScrollProps {
 export const Scroll = (props: ScrollProps): ReactElement => {
   const [offset, setOffset] = useState(0);
   const [items, setItems] = useState<Stream[]>([]);
+  const [hasMore, setHasMore] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
   const maxResults = props.maxResults !== undefined ? props.maxResults : 20;
 
@@ -22,12 +23,15 @@ export const Scroll = (props: ScrollProps): ReactElement => {
       const response = await fetch(genUrl(props, maxResults, offset));
       if (response.ok) {
         response.json().then(
-          (res) => {
+          (res: Stream[]) => {
             setItems(items.concat(res));
+            setOffset(offset + res.length);
+            if (res.length === 0) {
+              setHasMore(false);
+            }
           },
           (rej) => {}
         );
-        setOffset(offset + maxResults);
       }
     } catch (error) {
       console.log(error);
@@ -37,7 +41,6 @@ export const Scroll = (props: ScrollProps): ReactElement => {
   // This hook makes sure that enough items are loaded that we can scroll
   useEffect(() => {
     const checkHeight = (): void => {
-      console.log(ref.current?.scrollHeight, window.innerHeight);
       if (
         ref.current != null &&
         ref.current.scrollHeight < window.innerHeight
@@ -60,12 +63,12 @@ export const Scroll = (props: ScrollProps): ReactElement => {
 
   return (
     <div className="section full-height">
-      <h1 className="display-6 fw-bold text-left">LiveStreams</h1>
+      <h1 className="header-title fw-bold text-left">LiveStreams</h1>
       <div ref={ref}>
         <InfiniteScroll
           dataLength={items.length}
           next={getItems}
-          hasMore={true}
+          hasMore={hasMore}
           loader={<></>}
         >
           <Grid

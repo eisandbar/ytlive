@@ -44,7 +44,7 @@ export const Grid = (props: GridProps): ReactElement => {
   return (
     <div ref={ref} className="category-row ovh">
       {/* We need to specify sm in cases where displayed.length < cols */}
-      <Row sm={cols}>
+      <Row className="g-2" sm={cols}>
         {categories.map((x, i) => (
           <props.Child key={i} item={x} />
         ))}
