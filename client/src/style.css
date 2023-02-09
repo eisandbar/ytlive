@@ -22,8 +22,8 @@
     padding: 0!important;
 }
 
-h6.ellipses {
-    height: 0.7rem;
+.ellipses {
+    height: 1rem;
     white-space: nowrap; 
     overflow:hidden;
     text-overflow: ellipsis;
@@ -53,8 +53,8 @@ h6.ellipses {
 
 /* Categories */
 .category {
-    min-width: 10rem;
-    max-width: 14rem;
+    min-width: 6rem;
+    max-width: 8rem;
     margin-bottom: 0.5rem;
 }
 
