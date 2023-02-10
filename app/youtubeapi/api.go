@@ -35,6 +35,7 @@ func (yt *YoutubeAPI) GetSearchList(options *SearchOptions) youtube.SearchListRe
 	listResponse, err := listCall.Do()
 	if err != nil {
 		log.Printf("Unable to get search list response: %v", err)
+		return youtube.SearchListResponse{}
 	}
 
 	return *listResponse
@@ -56,6 +57,7 @@ func (yt *YoutubeAPI) GetVideosList(id []string) youtube.VideoListResponse {
 	listResponse, err := listCall.Do()
 	if err != nil {
 		log.Printf("Unable to get video list response: %v", err)
+		return youtube.VideoListResponse{}
 	}
 	return *listResponse
 }
