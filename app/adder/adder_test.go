@@ -12,3 +12,9 @@ func TestTime(t *testing.T) {
 	a = time.Duration(float64(a) * 1.2)
 	assert.Equal(t, time.Minute*120, a)
 }
+
+// Even though they are declared i the same line, one is greater than the other
+func TestAfter(t *testing.T) {
+	a, b := time.Now(), time.Now()
+	assert.Equal(t, true, b.After(a))
+}

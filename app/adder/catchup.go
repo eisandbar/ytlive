@@ -8,7 +8,7 @@ import (
 
 // Exponentially increases interval to catchup to missed streams
 func catchup(timeMissed time.Duration, gaming bool, callback func(so *youtubeapi.SearchOptions)) {
-	now, current := time.Now(), time.Now()
+	current, now := time.Now(), time.Now()
 	interval := time.Minute * 20
 
 	for current.After(now.Add(-timeMissed)) {
