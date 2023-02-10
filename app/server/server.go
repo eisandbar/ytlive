@@ -26,7 +26,8 @@ func StartServer(server Server, port string) {
 	router.HandleFunc("/categories", server.getCategories).Methods("GET")
 
 	handler := cors.New(cors.Options{
-		AllowedOrigins:   []string{"https://ytlive.online", "http://localhost:5173"},
+		// For some reason cors fails on occasion, and always on mobile, so until then allow all (*)
+		AllowedOrigins:   []string{"*", "https://ytlive.online", "http://localhost:5173"},
 		AllowCredentials: true,
 	}).Handler(router)
 
