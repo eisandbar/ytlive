@@ -18,8 +18,8 @@ services:
     build: 
       context: ./nginx/
       dockerfile: Dockerfile
-    networks:
-      - nginx-network
+    ports:
+      - "localhost:3001:80"
     restart: on-failure
     volumes:
       - ./build:/var/www/ytlive/html
@@ -39,7 +39,8 @@ services:
     build: ./app
     networks:
       - db-network
-      - nginx-network
+    ports:
+      - "localhost:3322:3322"
     environment:
       POSTGRES_USER: pguser
       POSTGRES_PASSWORD: secret
@@ -49,6 +50,3 @@ services:
 
 networks:
   db-network:
-  nginx-network:
-    name: nginx-network
-    external: true
