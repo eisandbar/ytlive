@@ -1,0 +1,9 @@
+steps:
+  - name: gcr.io/cloud-builders/gcloud
+    args:
+      - compute
+      - ssh
+      - eisandbar@website
+      - "--zone=us-central1-c"
+      - '--command="/home/eisandbar/ytlive/pull.sh"'
+    id: Update live server
